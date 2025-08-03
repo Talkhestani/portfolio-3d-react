@@ -59,11 +59,11 @@ export default function Astronaut({ scale = 0.3, position = [1.3, -1, 0] }: Prop
                                 'Cube011_0',
                             ].map((name) => (
                                 <skinnedMesh
-                                    key={name}
-                                    name={name}
-                                    geometry={nodes[name].geometry}
-                                    material={materials['AstronautFallingTexture.png']}
-                                    skeleton={nodes[name].skeleton}
+                                key={name}
+                                name={name}
+                                geometry={(nodes[name] as THREE.SkinnedMesh).geometry}
+                                material={materials['AstronautFallingTexture.png']}
+                                skeleton={(nodes[name] as THREE.SkinnedMesh).skeleton}
                                 />
                             ))}
                             <group name="Cube009" rotation={[-2.708, 0.013, -1.447]} scale={1.307} />
